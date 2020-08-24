@@ -1,0 +1,27 @@
+
+.dias{
+  max-width: 100%;
+}
+.dia{
+  border: 2px solid blue;
+  &-titulo{
+    background-color: red;
+    &.activo{
+      background-color: green;
+    }
+  }
+}
+
+.programas{
+  position: relative;
+  border: 2px solid red;
+}
+
+.programa{
+  position: absolute;
+  left: -5000px;
+  &.activo{
+    position: relative;
+    left: 0;
+  }
+}

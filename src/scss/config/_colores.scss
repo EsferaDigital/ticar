@@ -1,0 +1,30 @@
+
+// Para guardar la paleta de colores y los colores degradados que usaremos en cada proyecto. Se modifica en función de cada proyecto
+
+@function color($color) {
+  @return map-get($colors,$color);
+}
+
+// Paleta de colores
+
+$colors:(
+  rosado: #DF3C8F,
+  blanco: #FFFFFF,
+  morado: #88327F,
+  gris: #505050,
+  celeste: #00A5CF,
+  verde: #006741,
+  amarillo: #EFAB00,
+);
+
+$fondo-transparente: rgba(9, 10, 7, 0.8);
+
+$degradado: linear-gradient(to right, rgba(48,150,197,1) 0%, rgba(124,53,130,1) 100%);
+
+$fondo-degradado: linear-gradient(to right, rgb(16, 26, 62) 0%, rgb(16, 15, 34) 100%);
+
+ // Con esta función, para capturar el color bastaria poner, por ejemplo:
+ //
+ // div{
+ //   background: color(gris-claro);
+ // }

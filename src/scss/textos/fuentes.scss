@@ -1,0 +1,89 @@
+
+// Para establecer los tipos de fuente (principal, secundaria, auxiliar), los tamaños de los textos por defecto según su etiqueta
+
+
+// Para establecer los tipos de fuente (principal, secundaria, auxiliar), los tamaños de los textos por defecto según su etiqueta
+
+// Reset tamaño de tipografias
+
+  // Convertir px a em
+
+  @function em($el,$parent:16px) {
+    @return ($el / $parent) * 1em;
+  }
+
+  // Convertir px a rem
+
+  @function rem($el) {
+    @return ($el / 16px) * 1rem;
+  }
+
+  // Font face
+@font-face{
+  font-family: "Nebula Hollow";
+  src: url('/src/assets/fuentes/Nebula-Hollow.eot') format('eot');
+  src: url('/src/assets/fuentes/Nebula-Hollow.eot?#iefix') format('eot'),
+        url('/src/assets/fuentes/Nebula-Hollow.woff') format('woff'),
+        url('/src/assets/fuentes/Nebula-Hollow.woff2') format('woff2'),
+        url('/src/assets/fuentes/Nebula-Hollow.ttf') format('truetype');
+  font-weight: normal;
+  font-style:normal;
+}
+
+@font-face{
+  font-family: "Nebula Regular";
+  src: url('/src/assets/fuentes/Nebula-Regular.eot') format('eot');
+  src: url('/src/assets/fuentes/Nebula-Regular.eot?#iefix') format('eot'),
+        url('/src/assets/fuentes/Nebula-Regular.woff') format('woff'),
+        url('/src/assets/fuentes/Nebula-Regular.woff2') format('woff2'),
+        url('/src/assets/fuentes/Nebula-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style:normal;
+}
+
+   //Tamaños de fuentes
+
+  $font-root: em(16px);
+  // $title: $font-root * 2;
+  // $sub-title: $font-root * 1.7;
+  // $big-title: $font-root * 3;
+
+  // $icon: $font-root * 3.5;
+
+  $light: 300; //Ancho de fuente
+  $normal: 400; //Ancho de fuente
+  $bold: 700;
+
+
+  h1{font-size: 2rem;}
+  h2{font-size: 1.75rem;}
+  h3{font-size: 1.5rem;}
+  h4{font-size: 1.25rem;}
+
+  h5, a, abbr, b, code, dfn, em, i, li, mark, p, pre, strong{
+    font-size: 1rem;
+  }
+
+  h6, small{font-size: .75rem;}
+
+  // Familias tipográficas
+
+  @function fuente($fuente){
+    @return map-get($fuentes, $fuente );
+  }
+
+  $fuentes:(
+    montserrat: ('Montserrat', sans-serif),
+    lato: ('Lato', sans-serif),
+    nebula1: ('Nebula Regular', sans-serif),
+    nebula2: ('Nebula Hollow', sans-serif),
+  );
+
+  html {
+    font-family: fuente(lato);
+    font-size: $font-root;
+  }
+
+  body{
+    font-family: fuente(lato);
+  }

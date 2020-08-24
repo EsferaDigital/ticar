@@ -1,0 +1,21 @@
+
+// Para manejar los estilos de los titulos
+
+.titulo-seccion{
+  font-family: fuente(nebula2);
+  background-color: color(morado);
+  color: color(blanco);
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 0 1rem;
+  margin: 0;
+  text-align: center;
+  &.directiva{
+    background-color: color(blanco);
+    color: color(morado);
+    font-family: fuente(nebula1);
+  }
+  &.speakers{
+    background-color: color(rosado);
+  }
+}

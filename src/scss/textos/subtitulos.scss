@@ -1,0 +1,22 @@
+
+// Para manejar los estilos de los subtítulos
+
+.text-center{
+  text-align: center;
+}
+
+.sub-titulo{
+  color: color(gris);
+  font-size: 1.2rem;
+  border-bottom: 1px solid color(gris);
+  display: inline;
+  padding-bottom: .3rem;
+}
+
+.sub-titulo-icon{
+  color: color(morado);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+}

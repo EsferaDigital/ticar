@@ -1,0 +1,51 @@
+
+// Configuración
+
+@import "config/reset";
+@import "config/capas";
+@import "config/colores";
+@import "config/breakpoints";
+@import "config/var-root";
+
+// Shared
+
+@import "shared/header";
+@import "shared/footer";
+
+// Secciones
+
+@import "secciones/banner";
+@import "secciones/container";
+@import "secciones/main";
+@import "secciones/secciones";
+@import "secciones/ediciones";
+@import "secciones/notfull";
+
+// Layout
+
+@import "layout/columnas";
+@import "layout/filas";
+@import "layout/margenes";
+@import "layout/padding";
+
+// Textos
+
+@import "textos/fuentes";
+@import "textos/titulos";
+@import "textos/subtitulos";
+@import "textos/parrafos";
+@import "textos/menu";
+
+// Elementos
+
+@import "elementos/programas";
+@import "elementos/iconos";
+@import "elementos/botones";
+
+// Wordpress (si se necesita)
+
+// Elementor (si se necesita)
+
+// Woocommerce (si se necesita)
+
+// Animaciones

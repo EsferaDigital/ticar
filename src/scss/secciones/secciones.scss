@@ -1,0 +1,116 @@
+
+.nosotros-icons{
+  display: block;
+  border: 2px solid red;
+}
+
+.nosotros-card{
+  &-icon{
+    border: 2px solid green;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &-img{
+    width: 25%;
+    margin: 0 auto;
+  }
+  &-img.mas{
+    width: 15%;
+  }
+  &-img.ticar{
+    width: 100%;
+  }
+}
+
+.infografia{
+  margin-top: 1rem;
+  background-image: url("/src/assets/img/fondo-infografia.jpg");
+  background-position: left top;
+  background-size: cover;
+  padding: 1rem 0;
+  position: relative;
+  &:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $fondo-degradado;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: .8;
+  }
+}
+
+.grafica{
+  position: relative;
+  z-index: 10;
+}
+
+.directiva-cards{
+  background-image: url("/src/assets/img/fondo-textura.jpg");
+  background-position: left bottom;
+  background-size: contain;
+}
+
+.directiva-card{
+  border: 1px solid red;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  & .card-description{
+    color: color(blanco);
+    background-color: color(morado);
+    position: relative;
+    padding: 1rem 0 2rem;
+    margin: 1rem auto;
+    z-index: 1;
+    &:after{
+      position: absolute;
+      content: "";
+      width: 5rem;
+      height: 5rem;
+      top: - 20px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      z-index: - 1;
+      background-color: inherit;
+      transform: rotate(45deg);
+    }
+    &.rosado{
+      background-color: color(rosado);
+    }
+    &.celeste{
+      background-color: color(celeste);
+    }
+    & h2, p{
+      width: 90%;
+      margin: 0 auto;
+    }
+    & h2{
+      font-family: fuente(lato);
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+    }
+    & .italica{
+      text-transform: uppercase;
+      font-style: italic;
+      font-size: .9rem;
+      padding-top: 2rem;
+    }
+    & p:first-of-type{
+      border-bottom: 2px solid color(blanco);
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+      padding-bottom: .3rem;
+    }
+    & p:nth-child(3){
+      font-weight: 600;
+      padding: .5rem 0;
+    }
+  }
+}
+

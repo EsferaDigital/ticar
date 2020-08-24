@@ -114,3 +114,66 @@
   }
 }
 
+.speakers{
+  text-align: center;
+  &-card{
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    cursor: pointer;
+    border: 2px solid red;
+    position: relative;
+    &:hover .speakers-card-description{
+      transform: scale3d(1,1,1);
+    }
+    & img{
+      display: block;
+    }
+    &-description{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      background: $degradado;
+      opacity: .8;
+      color: color(blanco);
+      transform: scale3d(1,0,1);
+      transition: transform .5s;
+      & p{
+        margin: 0;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+      }
+    }
+    &-name{
+      font-weight: 700;
+      font-size: 1.5rem !important;
+    }
+  }
+}
+
+#programa{
+  background-image: url("/src/assets/img/fondo-infografia.jpg");
+  background-position: left top;
+  background-size: cover;
+  position: relative;
+  &:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $fondo-degradado;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: .8;
+  }
+}
+

@@ -10,6 +10,8 @@
   padding: 1rem 0 1rem;
   margin: 0;
   text-align: center;
+  position: relative;
+  z-index: 10;
   &.directiva{
     background-color: color(blanco);
     color: color(morado);

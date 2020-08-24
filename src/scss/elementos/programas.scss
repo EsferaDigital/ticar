@@ -1,19 +1,40 @@
 
 .dias{
   max-width: 100%;
+  border: 2px solid blue;
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .dia{
-  border: 2px solid blue;
   &-titulo{
-    background-color: red;
-    &.activo{
-      background-color: green;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: color(blanco);
+    text-transform: uppercase;
+    text-align: center;
+    background: $degradado;
+    cursor: pointer;
+    &:hover{
+      background: color(morado);
     }
+    &.activo{
+      background: color(morado);
+    }
+  }
+  &-descripcion{
+    text-align: center;
+    color: color(blanco);
   }
 }
 
 .programas{
   position: relative;
+  z-index: 10;
   border: 2px solid red;
 }
 

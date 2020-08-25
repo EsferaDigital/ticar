@@ -17,7 +17,7 @@
 .Header-container{
   position: relative;
   margin: 0 auto;
-  @include mq(md){
+  @include mq(lg){
     display: flex;
   }
 }
@@ -27,9 +27,9 @@
   height: $altura-header;
   line-height: $altura-header;
   z-index: capa(capa1);
-  @include mq(md){
+  @include mq(lg){
     position: static;
-    width: 30%;
+    width: 15%;
   }
   & a{
     display: grid;
@@ -41,6 +41,9 @@
     width: auto;
     height: 3.5rem;
     padding-left: 1rem;
+    @include mq(lg){
+      height: 5rem;
+    }
   }
 }
 
@@ -87,13 +90,14 @@
   // transform: translate(0, 100%);
   // De la derecha
   transform: translate(100%, 0);
-  @include mq(md){
+  @include mq(lg){
     position: static;
-    width: 70%;
+    width: 85%;
     display: flex;
     overflow-y: visible;
     background-color: transparent;
     transform: translate(0,0);
+    margin-right: 1rem;
   }
   &.is-active{
     transform: translate(0,0);
@@ -127,6 +131,7 @@
     background: transparent;
   }
   & ul{
+    width: 100%;
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -134,17 +139,21 @@
     @include mq(lg){
       flex-direction: row;
       justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      margin: 0 auto;
     }
   }
   & li{
     margin-left: 0;
-    line-height: 3.5rem;
+    line-height: 5rem;
     @include mq(sm){
       line-height: 4rem;
     }
     @include mq(lg){
+      display: grid;
       margin-left: .5rem;
-      line-height: 5rem;
+      height: 100%;
     }
   }
   & a{
@@ -156,13 +165,28 @@
     transition: all .3s ease;
     // border: 2px solid red;
     margin: auto;
-    @include mq(md){
-      border: 2px solid red;
+    @include mq(lg){
+      align-self: center;
+      justify-self: center;
+      // border: 2px solid red;
       padding: 0 .5rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      color: color(morado);
     }
     &:hover{
-      background-color: color(rosado);
+      background: $degradado;
+      color: color(blanco);
+    }
+    &.Menu-link-externo{
+      background-color: color(amarillo);
+      color: color(blanco);
+      height: 2.5rem;
+      line-height: 2.5rem;
+      border-radius: 20px;
+      max-width: 300px;
+      &:hover{
+        background: color(verde);
+      }
     }
   }
 }

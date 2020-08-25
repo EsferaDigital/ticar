@@ -12,12 +12,54 @@
   text-align: center;
   position: relative;
   z-index: 10;
+  @include mq(mds){
+    font-size: 2rem;
+  }
+  @include mq(md){
+    font-size: 2.2rem;
+  }
+  @include mq(lg){
+    font-size: 2.7rem;
+  }
+  @include mq(lgm){
+    font-size: 3rem;
+  }
   &.directiva{
     background-color: color(blanco);
     color: color(morado);
     font-family: fuente(nebula1);
   }
-  &.speakers{
+  &.speak{
     background-color: color(rosado);
+  }
+  &.ediciones{
+    background-color: color(celeste);
+  }
+}
+
+.edicion-title{
+  text-align: center;
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 2px;
+    background-color: color(celeste);
+    top: .75rem;
+    left: 0;
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 2px;
+    background-color: color(celeste);
+    top: .75rem;
+    right: 0;
+  }
+  & h3{
+    font-family: fuente(nebula1);
+    color: color(celeste);
   }
 }

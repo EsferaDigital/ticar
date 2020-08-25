@@ -28,6 +28,9 @@ $large-full: 1400px;
     @if $size == lg {
       @media screen and (min-width: $large){@content;}
     }
+    @if $size == mds {
+      @media screen and (min-width: $medium-small){@content;}
+    }
     @if $size == smH{
         @media screen and (min-width: $small)and (max-width: $medium) and (orientation: landscape){@content;}
     }

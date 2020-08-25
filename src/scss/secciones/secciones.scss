@@ -1,26 +1,111 @@
 
+.titular{
+  & h2{
+    width: 70%;
+    background: $degradado;
+    position: relative;
+    font-size: 1.2rem;
+    top: - 1.5rem;
+  }
+  &-hora{
+    margin: 0;
+    color: color(morado);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  &-aviso{
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: .5rem 0;
+    color: color(gris);
+  }
+  &-cta{
+    background-color: color(rosado);
+    text-transform: uppercase;
+    max-width: 50%;
+    margin: .5rem auto 0;
+    padding: .5rem 1rem;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover{
+      background-color: color(morado);
+    }
+  }
+  &-slogan{
+    margin-top: 2rem;
+    & h3{
+      color: color(morado);
+      font-family: 'Nebula Regular', sans-serif;
+      margin: .5rem 0 0;
+    }
+    & p{
+      margin: 0;
+      text-transform: uppercase;
+      color: color(rosado);
+      font-weight: 700;
+    }
+  }
+}
+
+.nosotros-header{
+  & h2{
+    padding-top: 2.5rem;
+  }
+}
+
+
 .nosotros-icons{
   display: block;
-  border: 2px solid red;
+  // border: 2px solid red;
+  @include mq(mds){
+    display: grid;
+    grid-template-columns: 1fr 70px 1fr 70px 1fr 70px 1.5fr;
+    align-items: center;
+  }
+  @include mq(lg){
+    width: 90%;
+    margin: auto;
+  }
 }
 
 .nosotros-card{
   &-icon{
-    border: 2px solid green;
-    width: 100%;
+    // border: 2px solid green;
+    // width: 100%;
     margin: 0 auto;
+    width: auto;
   }
   &-img{
+    display: block;
     width: 25%;
     margin: 0 auto;
   }
   &-img.mas{
     width: 15%;
+    margin: 0 auto;
+    @include mq(md){
+      width: 50%;
+    }
+    & img{
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
   }
   &-img.ticar{
     width: 100%;
+    @include mq(md){
+      width: 80%;
+      // border: 2px solid red;
+    }
+    @include mq(lg){
+      width: 100%;
+    }
   }
 }
+
 
 .infografia{
   margin-top: 1rem;
@@ -51,14 +136,36 @@
   background-image: url("/src/assets/img/fondo-textura.jpg");
   background-position: left bottom;
   background-size: contain;
+  @include mq(mds){
+    width: 90%;
+    margin: 1rem auto 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mq(lg){
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .directiva-card{
-  border: 1px solid red;
+  // border: 1px solid red;
   text-align: center;
   width: 80%;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
+  &:last-child{
+    // border: 2px solid red;
+    @include mq(lg){
+      position: relative;
+      top: - 1.5rem;
+    }
+  }
+  & .card-img{
+    // border: 2px solid purple;
+    & img{
+      display: block;
+    }
+  }
   & .card-description{
     color: color(blanco);
     background-color: color(morado);
@@ -66,6 +173,9 @@
     padding: 1rem 0 2rem;
     margin: 1rem auto;
     z-index: 1;
+    @include mq(mds){
+      margin: 1.5rem 0 0;
+    }
     &:after{
       position: absolute;
       content: "";
@@ -81,6 +191,29 @@
     }
     &.rosado{
       background-color: color(rosado);
+      @include mq(mds){
+        margin: 0 0 1.5rem;
+      }
+      &:after{
+        top: 150px;
+        // bottom: - 40px;
+        @include mq(mds){
+          top: 220px;
+        }
+      }
+    }
+    &.rosado2{
+      background-color: color(rosado);
+      @include mq(mds){
+        margin: 1.5rem 0;
+      }
+      &:after{
+        top: 150px;
+        // bottom: - 40px;
+        @include mq(mds){
+          top: 180px;
+        }
+      }
     }
     &.celeste{
       background-color: color(celeste);
@@ -114,14 +247,31 @@
   }
 }
 
+#speakers{
+  background-image: url("/src/assets/img/fondo-textura.jpg");
+  background-position: left bottom;
+  background-size: contain;
+}
+
 .speakers{
   text-align: center;
+  // border: 2px solid red;
+  margin: 1rem auto;
+  @include mq(mds){
+    width: 80%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mq(md){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   &-card{
     width: 80%;
     max-width: 300px;
-    margin: 0 auto;
+    margin: 1rem auto;
     cursor: pointer;
-    border: 2px solid red;
+    // border: 2px solid red;
     position: relative;
     &:hover .speakers-card-description{
       transform: scale3d(1,1,1);

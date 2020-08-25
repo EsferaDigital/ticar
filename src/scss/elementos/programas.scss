@@ -1,15 +1,58 @@
 
 .dias{
+  padding: 1rem 0 0;
   max-width: 100%;
   border: 2px solid blue;
   position: relative;
   z-index: 10;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "lunes martes"
+                       "miercoles jueves"
+                       "viernes viernes";
+  @include mq(mds){
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "lunes lunes martes martes miercoles miercoles"
+                         "jueves jueves jueves viernes viernes viernes";
+  }
+  @include mq(lg){
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "lunes martes miercoles jueves viernes";
+  }
+  @include mq(lgm){
+    width: 95%;
+    margin: auto;
+  }
 }
+
+.lunes{
+  grid-area: lunes;
+}
+
+.martes{
+  grid-area: martes;
+}
+
+.miercoles{
+  grid-area: miercoles;
+}
+
+.jueves{
+  grid-area: jueves;
+}
+
+.viernes{
+  grid-area: viernes;
+}
+
 .dia{
+  padding: .5rem;
   &-titulo{
-    max-width: 90%;
+    width: 80%;
+    max-width: 150px;
     margin: 0 auto;
     padding: .5rem 1rem;
     border-radius: 20px;
@@ -18,6 +61,7 @@
     text-transform: uppercase;
     text-align: center;
     background: $degradado;
+    font-weight: 700;
     cursor: pointer;
     &:hover{
       background: color(morado);
@@ -29,6 +73,9 @@
   &-descripcion{
     text-align: center;
     color: color(blanco);
+    text-transform: uppercase;
+    margin: .5rem auto;
+    font-size: .9rem;
   }
 }
 
@@ -36,11 +83,86 @@
   position: relative;
   z-index: 10;
   border: 2px solid red;
+  width: 95%;
+  margin: auto;
 }
 
 .programa{
   position: absolute;
+  background-color: color(blanco);
   left: -5000px;
+  color: color(gris);
+  padding-top: 1.5rem;
+  border-radius: 20px;
+  &-titulo{
+    background-color: color(rosado);
+    padding: .3rem 5px;
+    &.morado{
+      background-color: color(morado);
+    }
+    & h3{
+      text-transform: uppercase;
+      color: color(blanco);
+      font-size: 1.1rem;
+      text-align: center;
+    }
+  }
+  &-body{
+    margin: .5rem;
+    padding-bottom: .5rem;
+    display: grid;
+    grid-template-columns: minmax(min-content, 30%)
+                           1fr;
+  }
+  &-horas{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid color(gris);
+    border-right: 1px solid color(gris);
+    &.border-none{
+      border-bottom: transparent;
+    }
+    & p{
+      margin: 5px auto;
+      font-weight: 700;
+    }
+  }
+  &-descripcion{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid color(gris);
+    padding: .5rem;
+    justify-content: center;
+    &.border-none{
+      border-bottom: transparent;
+    }
+    & .discusion{
+      display: grid;
+      grid-template-columns: minmax(min-content, max-content) 1fr;
+      gap: .5rem;
+      margin-bottom: .5rem;
+      &-item1{
+        margin-bottom: .5rem;
+      }
+      &-item2 p{
+        padding: 0 0 .5rem;
+      }
+    }
+    & h4{
+      margin: 0;
+      margin-bottom: .5rem;
+      padding: 5px 0;
+      color: color(rosado);
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+    & p{
+      margin: 0;
+      font-size: .9rem;
+    }
+  }
   &.activo{
     position: relative;
     left: 0;

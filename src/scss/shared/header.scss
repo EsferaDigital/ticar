@@ -29,7 +29,7 @@
   z-index: capa(capa1);
   @include mq(lg){
     position: static;
-    width: 15%;
+    width: 13%;
   }
   & a{
     display: grid;
@@ -92,7 +92,7 @@
   transform: translate(100%, 0);
   @include mq(lg){
     position: static;
-    width: 85%;
+    width: 87%;
     display: flex;
     overflow-y: visible;
     background-color: transparent;
@@ -170,7 +170,7 @@
       justify-self: center;
       // border: 2px solid red;
       padding: 0 .5rem;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: color(morado);
     }
     &:hover{

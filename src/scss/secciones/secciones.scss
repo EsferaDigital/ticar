@@ -6,12 +6,19 @@
     position: relative;
     font-size: 1.2rem;
     top: - 1.5rem;
+    @include mq(md){
+      width: 50%;
+      font-size: 2rem;
+    }
   }
   &-hora{
     margin: 0;
     color: color(morado);
     font-size: 1.2rem;
     font-weight: 700;
+    @include mq(md){
+      font-size: 1.5rem;
+    }
   }
   &-aviso{
     margin: 0;
@@ -29,6 +36,15 @@
     font-weight: 700;
     border-radius: 20px;
     cursor: pointer;
+    @include mq(md){
+      width: 40%;
+    }
+    & a{
+      font-size: 1rem;
+      @include mq(md){
+        font-size: 1.5rem;
+      }
+    }
     &:hover{
       background-color: color(morado);
     }
@@ -39,12 +55,18 @@
       color: color(morado);
       font-family: 'Nebula Regular', sans-serif;
       margin: .5rem 0 0;
+      @include mq(md){
+        font-size: 1.7rem;
+      }
     }
     & p{
       margin: 0;
       text-transform: uppercase;
       color: color(rosado);
       font-weight: 700;
+      @include mq(md){
+        font-size: 1.5rem;
+      }
     }
   }
 }
@@ -200,6 +222,9 @@
         @include mq(mds){
           top: 220px;
         }
+        @include mq(md){
+          top: 180px;
+        }
       }
     }
     &.rosado2{
@@ -212,6 +237,9 @@
         // bottom: - 40px;
         @include mq(mds){
           top: 180px;
+        }
+        @include mq(md){
+          top: 150px;
         }
       }
     }
@@ -324,6 +352,96 @@
     left: 0;
     z-index: 1;
     opacity: .8;
+  }
+}
+
+.edicion{
+  width: 90%;
+  margin: auto;
+  // border: 2px solid green;
+  @include mq(mds){
+    margin: 1rem auto;
+  }
+}
+
+.organizadores-img{
+  text-align: center;
+  & img{
+    display: block;
+    @include mq(mds){
+      width: 60%;
+      margin: auto;
+    }
+  }
+  & p{
+    margin: 0 auto;
+    position: relative;
+    top: 1rem;
+  }
+}
+
+.organizadores-patrocinadores{
+  @include mq(mds){
+    display: flex;
+  }
+  & img{
+    display: block;
+    width: 50%;
+    margin: 1rem auto;
+    @include mq(mds){
+      width: 20%;
+    }
+  }
+}
+
+#contacto{
+  @include mq(mds){
+    margin-top: 1rem;
+  }
+}
+
+.contacto{
+  // border: 2px solid red;
+  width: 80%;
+  margin: 1rem auto 0;
+  @include mq(mds){
+    display: flex;
+  }
+  &-item{
+    // border: 2px solid blue;
+    margin-bottom: 1rem;
+    @include mq(lg){
+      padding-left: 1rem;
+    }
+    &-card{
+      display: flex;
+      align-items: center;
+      margin-bottom: .5rem;
+      @include mq(mds){
+        margin: 1rem;
+      }
+      & img{
+        display: block;
+        width: 15%;
+      }
+      & p{
+        width: 50%;
+        margin: 0;
+        margin-left: .5rem;
+        text-transform: uppercase;
+        color: color(verde);
+        font-weight: 700;
+        @include mq(lg){
+          font-size: 1.5rem;
+        }
+      }
+      & p.mail{
+        text-transform: initial;
+      }
+    }
+  }
+  &-item:nth-child(2){
+    border-left: 2px solid color(verde);
   }
 }
 

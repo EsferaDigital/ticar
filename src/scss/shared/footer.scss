@@ -1,6 +1,125 @@
 
 // Para los estilos de la etiqueta footer y todo lo que contenga dicha etiqueta, puedo crear distintos tipos de footer con distinta distribución de los elementos clasico (copyrigth, link al autor, redes sociales, contacto, menu, etc)
 
-.Footer{
-  border: 2px solid brown;
+// .Footer{
+//   border: 2px solid brown;
+// }
+
+.footer{
+  // border: 2px solid red;
+  background-color: color(amarillo);
+  @include mq(mds){
+    display: grid;
+    grid-template-columns: 30% 10% 40% 20%;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  @include mq(lg){
+    grid-template-columns: 35% 10% 40% 15%;
+  }
+  &-item{
+    // border: 2px solid red;
+    text-align: center;
+    & img{
+      display: block;
+      @include mq(mds){
+        width: 100%;
+      }
+    }
+    &.manos{
+      & img{
+        width: 30%;
+        margin: auto;
+        @include mq(mds){
+          width: 100%;
+        }
+      }
+    }
+    & p{
+      text-transform: uppercase;
+      color: color(verde);
+      margin: 0;
+      font-weight: 700;
+      padding: 5px 0 0;
+      @include mq(mds){
+        font-size: .7rem;
+      }
+      @include mq(lg){
+        font-size: 1.3rem;
+      }
+    }
+    & a{
+      color: color(verde);
+      text-transform: uppercase;
+      background-color: color(blanco);
+      padding: .5rem 1rem;
+      border-radius: 20px;
+      margin: 1rem auto;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 700;
+      @include mq(mds){
+        font-size: .7rem;
+      }
+      @include mq(lg){
+        font-size: 1rem;
+      }
+      &:hover{
+        background-color: #e0dcdc;
+      }
+    }
+  }
+  &-item:last-child{
+    padding: 1.5rem 0;
+  }
+}
+
+.footer-menu{
+  background-color: color(verde);
+  padding: 1rem 0;
+  @include mq(lg){
+    padding: 1rem 4rem;
+  }
+  & ul{
+    margin: 0;
+    padding: 0;
+    @include mq(mds){
+      display: grid;
+      grid-template-columns: 17% 30% 40% 13%;
+      align-items: center;
+    }
+  }
+  & li{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    text-align: center;
+    padding: .5rem 0;
+    @include mq(mds){
+      border-right: 2px solid color(blanco);
+      padding: 0;
+    }
+  }
+  & li:last-of-type{
+    border-right: none;
+  }
+  & a{
+    text-transform: uppercase;
+    color: color(blanco);
+    text-decoration: none;
+    font-weight: 700;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    @include mq(mds){
+      font-size: .7rem;
+      padding: 0;
+    }
+    @include mq(lg){
+      font-size: 1rem;
+      padding: .5rem;
+    }
+    &:hover{
+      background-color: color(amarillo);
+    }
+  }
 }

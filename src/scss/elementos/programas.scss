@@ -2,7 +2,7 @@
 .dias{
   padding: 1rem 0 0;
   max-width: 100%;
-  border: 2px solid blue;
+  // border: 2px solid blue;
   position: relative;
   z-index: 10;
   display: grid;
@@ -76,15 +76,19 @@
     text-transform: uppercase;
     margin: .5rem auto;
     font-size: .9rem;
+    @include mq(mds){
+      font-size: .8rem;
+    }
   }
 }
 
 .programas{
   position: relative;
   z-index: 10;
-  border: 2px solid red;
+  // border: 2px solid red;
   width: 95%;
   margin: auto;
+  padding: 1rem 0;
 }
 
 .programa{
@@ -113,6 +117,11 @@
     display: grid;
     grid-template-columns: minmax(min-content, 30%)
                            1fr;
+    @include mq(lg){
+      grid-template-columns: minmax(min-content, 20%)
+                           1fr;
+      padding: 2rem;
+    }
   }
   &-horas{
     text-align: center;
@@ -121,6 +130,10 @@
     justify-content: center;
     border-bottom: 1px solid color(gris);
     border-right: 1px solid color(gris);
+    @include mq(mds){
+      flex-direction: row;
+      align-items: center;
+    }
     &.border-none{
       border-bottom: transparent;
     }
@@ -161,6 +174,9 @@
     & p{
       margin: 0;
       font-size: .9rem;
+      @include mq(lg){
+        font-size: 1rem;
+      }
     }
   }
   &.activo{

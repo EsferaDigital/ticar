@@ -12,4 +12,7 @@
   margin: 0 auto;
   top: 3rem;
   z-index: 100;
+  @include mq(md){
+    width: 15%;
+  }
 }

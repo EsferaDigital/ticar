@@ -6,7 +6,7 @@
   background-color: color(morado);
   color: color(blanco);
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 1rem 0 1rem;
   margin: 0;
   text-align: center;
@@ -35,9 +35,15 @@
   &.ediciones{
     background-color: color(celeste);
   }
+  &.organizadores{
+    background-color: color(verde);
+  }
+  &.contact{
+    background-color: color(amarillo);
+  }
 }
 
-.edicion-title{
+.edicion-title, .organizadores-title{
   text-align: center;
   position: relative;
   &:before{
@@ -48,6 +54,9 @@
     background-color: color(celeste);
     top: .75rem;
     left: 0;
+    @include mq(mds){
+      top: .9rem;
+    }
   }
   &:after{
     content: "";
@@ -57,9 +66,38 @@
     background-color: color(celeste);
     top: .75rem;
     right: 0;
+    @include mq(mds){
+      top: .9rem;
+    }
   }
   & h3{
     font-family: fuente(nebula1);
     color: color(celeste);
+    @include mq(mds){
+      font-size: 1.7rem;
+    }
+    @include mq(lg){
+      font-size: 2.3rem;
+    }
+  }
+}
+
+.organizadores-title{
+  &:before{
+    width: 20%;
+    background-color: color(verde);
+    @include mq(mds){
+      width: 30%;
+    }
+  }
+  &:after{
+    width: 20%;
+    background-color: color(verde);
+    @include mq(mds){
+      width: 30%;
+    }
+  }
+  & h3{
+    color: color(verde);
   }
 }

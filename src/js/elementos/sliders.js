@@ -28,8 +28,8 @@ const secondSlider = () =>{
   window.addEventListener("load",() =>{
   let lista = document.querySelector(".slider2-lista");
   new Glider(lista, {
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 2,
+    slidesToScroll: 2,
     draggable: true,
     dots: '.slider2-indicadores',
     arrows: {

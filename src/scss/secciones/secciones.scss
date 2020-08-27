@@ -152,12 +152,18 @@
 .grafica{
   position: relative;
   z-index: 10;
+  // border: 2px solid red;
+  @include mq(lg){
+    width: 55%;
+    margin: auto;
+  }
 }
 
 .directiva-cards{
   background-image: url("/src/assets/img/fondo-textura.jpg");
   background-position: left bottom;
   background-size: contain;
+  // border: 2px solid blue;
   @include mq(mds){
     width: 90%;
     margin: 1rem auto 2rem;
@@ -166,114 +172,363 @@
   }
   @include mq(lg){
     grid-template-columns: repeat(4, 1fr);
+    width: 80%;
   }
 }
 
-.directiva-card{
-  // border: 1px solid red;
-  text-align: center;
-  width: 80%;
-  max-width: 400px;
-  margin: 0 auto 1rem;
-  &:last-child{
-    // border: 2px solid red;
-    @include mq(lg){
-      position: relative;
-      top: - 1.5rem;
-    }
-  }
+.directiva-card-impar{
+  width: 90%;
+  margin: auto;
+  // border: 2px solid rgb(251, 255, 0);
   & .card-img{
-    // border: 2px solid purple;
+    width: 100%;
     & img{
       display: block;
     }
   }
-  & .card-description{
-    color: color(blanco);
-    background-color: color(morado);
+}
+
+.directiva-card-par{
+  width: 90%;
+  margin: 0 auto 2rem;
+  // border: 2px solid rgb(21, 255, 0);
+  @include mq(mds){
     position: relative;
-    padding: 1rem 0 2rem;
-    margin: 1rem auto;
-    z-index: 1;
-    @include mq(mds){
-      margin: 1.5rem 0 0;
-    }
-    &:after{
-      position: absolute;
-      content: "";
-      width: 5rem;
-      height: 5rem;
-      top: - 20px;
-      right: 0;
-      left: 0;
-      margin: auto;
-      z-index: - 1;
-      background-color: inherit;
-      transform: rotate(45deg);
-    }
-    &.rosado{
-      background-color: color(rosado);
+    top: 1rem;
+  }
+  & .card-img{
+    width: 100%;
+    & img{
+      display: block;
       @include mq(mds){
-        margin: 0 0 1.5rem;
+        position: relative;
+        top: - 1rem;
       }
-      &:after{
-        top: 150px;
-        // bottom: - 40px;
-        @include mq(mds){
-          top: 220px;
-        }
-        @include mq(md){
-          top: 180px;
-        }
-      }
-    }
-    &.rosado2{
-      background-color: color(rosado);
-      @include mq(mds){
-        margin: 1.5rem 0;
-      }
-      &:after{
-        top: 150px;
-        // bottom: - 40px;
-        @include mq(mds){
-          top: 180px;
-        }
-        @include mq(md){
-          top: 150px;
-        }
-      }
-    }
-    &.celeste{
-      background-color: color(celeste);
-    }
-    & h2, p{
-      width: 90%;
-      margin: 0 auto;
-    }
-    & h2{
-      font-family: fuente(lato);
-      text-transform: uppercase;
-      font-size: 1.1rem;
-      line-height: 1.5rem;
-    }
-    & .italica{
-      text-transform: uppercase;
-      font-style: italic;
-      font-size: .9rem;
-      padding-top: 2rem;
-    }
-    & p:first-of-type{
-      border-bottom: 2px solid color(blanco);
-      font-size: 1.1rem;
-      line-height: 1.5rem;
-      padding-bottom: .3rem;
-    }
-    & p:nth-child(3){
-      font-weight: 600;
-      padding: .5rem 0;
     }
   }
 }
+
+// .card-box{
+//   border: 2px solid green;
+// }
+
+.box-impar{
+  position: relative;
+  top: - 1rem;
+  // border: 2px solid blue;
+  z-index: 50;
+}
+
+.box-par{
+  position: relative;
+  bottom: - 1rem;
+  // border: 2px solid #98299c;
+  z-index: 50;
+  @include mq(mds){
+    bottom: 0;
+  }
+}
+
+.card-description-edward{
+  // border: 2px solid red;
+  color: color(blanco);
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  z-index: 50;
+  top: 5rem;
+  @include mq(mds){
+    top: 3rem;
+  }
+  @include mq(md){
+    top: 5rem;
+  }
+  @include mq(lg){
+    top: 1rem;
+  }
+  @include mq(lgm){
+    top: 2.5rem;
+  }
+  & h2.directiva-titulo{
+    margin: 0;
+    font-family: fuente(lato);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    @include mq(lg){
+      font-size: 1rem;
+      line-height: 1.3rem;
+    }
+    @include mq(lgm){
+      font-size: 1.3rem;
+      line-height: 1.5rem;
+    }
+  }
+  & p.directiva-nombre{
+    margin: .5rem 0;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid color(blanco);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    @include mq(lg){
+      font-size: .9rem;
+    }
+  }
+  & p.directiva-cargo{
+    margin: .5rem 0;
+    // border: 2px solid yellow;
+    font-size: 1.1rem;
+    font-weight: 700;
+    @include mq(lg){
+      font-size: .8rem;
+    }
+    @include mq(lgm){
+      font-size: 1rem;
+    }
+  }
+  & p.directiva-empresa{
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-style: italic;
+    // border: 2px solid pink;
+    @include mq(lg){
+      font-size: .8rem;
+      margin: .5rem 0;
+    }
+    @include mq(lgm){
+      font-size: 1rem;
+    }
+  }
+}
+
+.card-description-rafael{
+  // border: 2px solid red;
+  color: color(blanco);
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  z-index: 50;
+  top: 2rem;
+  @include mq(mds){
+    top: 0;
+  }
+  @include mq(md){
+    top: 2.5rem;
+  }
+  @include mq(lg){
+    top: - .5rem;
+  }
+  & h2.directiva-titulo{
+    margin: 0;
+    font-family: fuente(lato);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    @include mq(lg){
+      font-size: .9rem;
+      line-height: 1.3rem;
+    }
+    @include mq(lgm){
+      font-size: 1.3rem;
+      line-height: 1.5rem;
+    }
+  }
+  & p.directiva-nombre{
+    margin: .5rem 0;
+    border-bottom: 2px solid color(blanco);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding-bottom: .5rem;
+    @include mq(lg){
+      font-size: .8rem;
+      line-height: 1rem;
+      margin: 0 0 5px;
+    }
+    @include mq(lgm){
+      margin: .5rem 0;
+    }
+  }
+  & p.directiva-cargo{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    // border: 2px solid yellow;
+    @include mq(mds){
+      margin: .5rem 0;
+    }
+    @include mq(lg){
+      font-size: .8rem;
+    }
+    @include mq(lgm){
+      font-size: 1rem;
+    }
+  }
+  & p.directiva-empresa{
+    margin: .5rem 0;
+    text-transform: uppercase;
+    font-style: italic;
+    // border: 2px solid pink;
+    @include mq(lg){
+      font-size: .7rem;
+      margin: 3px 0 0;
+    }
+    @include mq(lgm){
+      font-size: .9rem;
+    }
+  }
+}
+
+.card-description-silvia{
+  // border: 2px solid red;
+  color: color(blanco);
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  z-index: 50;
+  top: 6rem;
+  @include mq(mds){
+    top: 3rem;
+  }
+  @include mq(md){
+    top: 5rem;
+  }
+  @include mq(lg){
+    top: 1.5rem;
+  }
+  @include mq(lgm){
+    top: 2rem;
+  }
+  & h2.directiva-titulo{
+    margin: 0;
+    font-family: fuente(lato);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    @include mq(lg){
+      font-size: .9rem;
+      line-height: 1.3rem;
+    }
+    @include mq(lgm){
+      font-size: 1.3rem;
+      line-height: 1.5rem;
+    }
+  }
+  & p.directiva-nombre{
+    margin: .5rem 0;
+    border-bottom: 2px solid color(blanco);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding-bottom: .5rem;
+    @include mq(lg){
+      font-size: .8rem;
+      line-height: 1rem;
+      margin: 0 0 5px;
+    }
+    @include mq(lgm){
+      margin: .5rem 0;
+    }
+  }
+  & p.directiva-cargo{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    // border: 2px solid yellow;
+    @include mq(lg){
+      font-size: .8rem;
+    }
+    @include mq(lgm){
+      font-size: 1rem;
+    }
+  }
+  & p.directiva-empresa{
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-style: italic;
+    // border: 2px solid pink;
+    @include mq(lg){
+      font-size: .7rem;
+      margin: 3px 0 0;
+    }
+    @include mq(lgm){
+      font-size: .9rem;
+    }
+  }
+}
+
+.card-description-alessandri{
+  // border: 2px solid red;
+  color: color(blanco);
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  z-index: 50;
+  top: 3rem;
+  @include mq(mds){
+    top: 0;
+  }
+  @include mq(md){
+    top: 3rem;
+  }
+  @include mq(lg){
+    top: 0;
+  }
+  & h2.directiva-titulo{
+    margin: 0;
+    font-family: fuente(lato);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    @include mq(lg){
+      font-size: .9rem;
+      line-height: 1.3rem;
+    }
+    @include mq(lgm){
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+    }
+  }
+  & p.directiva-nombre{
+    margin: .5rem 0;
+    border-bottom: 2px solid color(blanco);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding-bottom: .5rem;
+    @include mq(lg){
+      font-size: .8rem;
+      line-height: 1rem;
+      margin: 0 0 5px;
+    }
+    @include mq(lgm){
+      margin: .5rem 0;
+    }
+  }
+  & p.directiva-cargo{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    // border: 2px solid yellow;
+    @include mq(lg){
+      font-size: .8rem;
+    }
+    @include mq(lgm){
+      font-size: 1rem;
+    }
+  }
+  & p.directiva-empresa{
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-style: italic;
+    // border: 2px solid pink;
+    @include mq(lg){
+      font-size: .7rem;
+      margin: 3px 0 0;
+    }
+    @include mq(lgm){
+      font-size: .9rem;
+    }
+  }
+}
+
 
 #speakers{
   background-image: url("/src/assets/img/fondo-textura.jpg");
@@ -362,6 +617,9 @@
   @include mq(mds){
     margin: 1rem auto;
   }
+  @include mq(lg){
+    width: 60%;
+  }
 }
 
 .organizadores-img{
@@ -391,6 +649,15 @@
     @include mq(mds){
       width: 20%;
     }
+  }
+}
+
+.maspequeno{
+  margin: auto;
+  width: 80%;
+  @include mq(lg){
+    width: 70%;
+    margin: auto;
   }
 }
 

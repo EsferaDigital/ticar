@@ -3,4 +3,7 @@
 
 .not-full{
   padding: 0 1rem;
+  @include mq(lg){
+    padding: 0 3rem;
+  }
 }

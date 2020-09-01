@@ -32,7 +32,7 @@
     text-transform: uppercase;
     max-width: 50%;
     margin: .5rem auto 0;
-    padding: .5rem 1rem;
+    padding: 1rem;
     font-weight: 700;
     border-radius: 20px;
     cursor: pointer;
@@ -47,6 +47,9 @@
     }
     &:hover{
       background-color: color(morado);
+    }
+    &:active{
+      transform: scale(.9);
     }
   }
   &-slogan{
@@ -74,6 +77,18 @@
 .nosotros-header{
   & h2{
     padding-top: 2.5rem;
+  }
+}
+
+.nosotros-text{
+  // border: 2px solid red;
+  padding: 2rem 0 1rem;
+  @include mq(lg){
+    width: 80%;
+    margin: auto;
+  }
+  &-gris{
+    padding: 2rem 0;
   }
 }
 
@@ -553,14 +568,16 @@
     width: 80%;
     max-width: 300px;
     margin: 1rem auto;
-    cursor: pointer;
-    // border: 2px solid red;
-    position: relative;
-    &:hover .speakers-card-description{
-      transform: scale3d(1,1,1);
-    }
-    & img{
-      display: block;
+    &-content{
+      cursor: pointer;
+      // border: 2px solid red;
+      position: relative;
+      &:hover .speakers-card-description{
+        transform: scale3d(1,1,1);;
+      }
+      & img{
+        display: block;
+      }
     }
     &-description{
       display: flex;
@@ -571,8 +588,6 @@
       height: 100%;
       left: 0;
       top: 0;
-      bottom: 0;
-      right: 0;
       z-index: 1;
       background: $degradado;
       opacity: .8;
@@ -589,8 +604,71 @@
       font-weight: 700;
       font-size: 1.5rem !important;
     }
+    & .Box-btn{
+      margin-top: 1rem;
+      & .btn-modal{
+        color: color(blanco);
+        background: $degradado;
+        border: none;
+        outline: none;
+        padding: .5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+          background: color(morado);
+        }
+        &:active{
+          transform: scale(.9);
+        }
+      }
+    }
   }
 }
+
+// &:hover .speakers-card-description{
+//   transform: scale3d(1,1,1);
+// }
+// & img{
+//   display: block;
+// }
+// &-description{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   left: 0;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   z-index: 1;
+//   background: $degradado;
+//   opacity: .8;
+//   color: color(blanco);
+//   transform: scale3d(1,0,1);
+//   transition: transform .5s;
+//   & p{
+//     margin: 0;
+//     font-size: 1.1rem;
+//     text-transform: uppercase;
+//   }
+// }
+// &-name{
+//   font-weight: 700;
+//   font-size: 1.5rem !important;
+// }
+// & .Box-btn{
+//   margin-top: 1rem;
+//   & .btn-modal{
+//     color: color(blanco);
+//     background: $degradado;
+//     border: none;
+//     &:hover{
+//       background: color(morado);
+//     }
+//   }
+// }
 
 #programa{
   background-image: url("/src/assets/img/fondo-infografia.jpg");

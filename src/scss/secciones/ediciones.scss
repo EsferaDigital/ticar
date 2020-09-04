@@ -1,68 +1,62 @@
 
-
-
-
-// Sliders
-
-.slider{
+.ligthbox{
   // border: 2px solid red;
-  &-container{
-    position: relative;
-  }
-  &-lista{
-    overflow: hidden;
+  & .column{
+    // border: 2px solid blue;
+    overflow-x: hidden;
   }
 }
 
-.slider2{
-  // border: 2px solid red;
-  &-container{
-    position: relative;
-  }
-  &-lista{
-    overflow: hidden;
-  }
-}
-
-.siguiente, .anterior, .siguiente2, .anterior2{
-  position: absolute;
+#featured, #featured2{
   display: block;
-  width: 45px;
-  height: 45px;
-  border: none;
-  top: calc(50% - 35px);
+  width: 100%;
+  // max-width: 800px;
+  // max-height: 600px;
+  object-fit: cover;
   cursor: pointer;
-  line-height: 45px;
-  text-align: center;
-  background: none;
-  z-index: 100;
-  outline: none;
-  @include mq(mds){
-    width: 50px;
-    height: 50px;
-  }
-  &:active{
-    border: none;
-  }
-  & img{
-    display: block;
-    width: 100%;
+  // border: 2px solid green;
+}
+
+#slide-wrapper, #slide-wrapper2{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+#slider, #slider2{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.arrow{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: .3s;
+  &:hover{
+    opacity: .5;
+    width: 35px;
+    height: 35px;
   }
 }
 
-.anterior, .anterior2{
-  left: - 30px;
-  @include mq(mds){
-    left: - 40px;
+.thumbnail, .thumbnail2{
+  object-fit: cover;
+  width: 110px;
+  display: block;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.5;
+  margin: 5px;
+  // border: 2px solid color(morado);
+  &:hover{
+    opacity: 1;
   }
 }
 
-.siguiente, .siguiente2{
-  transform: rotate(180deg);
-  // background-color: red;
-  right: - 30px;
-  z-index: 100;
-  @include mq(mds){
-    right: - 40px;
-  }
+.active, .active2{
+  opacity: 1;
 }

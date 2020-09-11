@@ -4,6 +4,7 @@ const openMa = document.getElementById('openMa')
 const openBa = document.getElementById('openBa')
 const openTe = document.getElementById('openTe')
 const openDo = document.getElementById('openDo')
+const openDi = document.getElementById('openDi')
 const openDa = document.getElementById('openDa')
 const modalCh = document.getElementById('modalCh')
 const modalBa = document.getElementById('modalBa')
@@ -13,7 +14,9 @@ const closeMa = document.getElementById('closeMa')
 const modalTe = document.getElementById('modalTe')
 const closeTe = document.getElementById('closeTe')
 const modalDo = document.getElementById('modalDo')
+const modalDi = document.getElementById('modalDi')
 const closeDo = document.getElementById('closeDo')
+const closeDi = document.getElementById('closeDi')
 const modalDa = document.getElementById('modalDa')
 const closeDa = document.getElementById('closeDa')
 const closeCh = document.getElementById('closeCh')
@@ -36,6 +39,7 @@ export {
   openBa,
   openTe,
   openDo,
+  openDi,
   openDa,
   modalCh,
   modalBa,
@@ -43,10 +47,12 @@ export {
   modalTe,
   modalDo,
   modalDa,
+  modalDi,
   closeBa,
   closeCh,
   closeDa,
   closeDo,
+  closeDi,
   closeMa,
   closeTe,
   imagenActiva,
